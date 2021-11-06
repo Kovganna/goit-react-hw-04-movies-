@@ -6,21 +6,21 @@ import Container from '../components/Container/Container';
 import Loader from 'react-loader-spinner';
 
 const HomePage = lazy(() =>
-  import('../pages/HomePage/HomePage.js' /* webpackChunkName: "home-page" */),
+  import('../pages/HomePage/HomePage' /* webpackChunkName: "home-page" */),
 );
 const MoviePages = lazy(() =>
   import(
-    '../pages/MoviePage/MoviesPage.js' /* webpackChunkName: "movie-pages" */
+    '../pages/MoviePage/MoviesPage' /* webpackChunkName: "movie-pages" */
   ),
 );
 const MovieDetailsPage = lazy(() =>
   import(
-    '../pages/MovieDetailsPage/MovieDetailsPage.js' /* webpackChunkName: "movie details-page" */
+    '../pages/MovieDetailsPage/MovieDetailsPage' /* webpackChunkName: "movie details-page" */
   ),
 );
 const NoFoundPage = lazy(() =>
   import(
-    '../pages/NoFoundPage/NoFoundPage.js' /* webpackChunkName: "noFound-page" */
+    '../pages/NoFoundPage/NoFoundPage' /* webpackChunkName: "noFound-page" */
   ),
 );
 

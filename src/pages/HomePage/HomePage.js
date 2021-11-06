@@ -9,7 +9,7 @@ import Loader from 'react-loader-spinner';
 
 const MovieDetailsPage = lazy(() =>
   import(
-    '../MovieDetailsPage/MovieDetailsPage.js' /* webpackChunkName: "movie details-page" */
+    '../MovieDetailsPage/MovieDetailsPage' /* webpackChunkName: "movie details-page" */
   ),
 );
 

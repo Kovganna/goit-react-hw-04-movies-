@@ -10,7 +10,7 @@ import MovieGallery from '../../components/MovieGallery/MovieGallery';
 
 const MovieDetailsPage = lazy(() =>
   import(
-    '../MovieDetailsPage/MovieDetailsPage.js' /* webpackChunkName: "movieDetails-page" */
+    '../MovieDetailsPage/MovieDetailsPage' /* webpackChunkName: "movieDetails-page" */
   ),
 );
 
