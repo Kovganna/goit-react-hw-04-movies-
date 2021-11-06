@@ -33,11 +33,12 @@ export default function App() {
           <Route path="/" exact>
             <HomePage />
           </Route>
-
           <Route path="/movies">
             <MoviePages />
           </Route>
-          <Route path="/movies/:movieId" component={MovieDetailsPage} />
+          <Route path="/movies/:movieId">
+            <MovieDetailsPage />
+          </Route>
           <Route>
             <NoFoundPage />
           </Route>

@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react/cjs/react.development';
+import { useState, useEffect } from 'react';
 import MovieAPI from '../../services/serviceAPI';
 import {
   NavLink,
@@ -20,7 +20,7 @@ const MovieDetailsPage = () => {
   const history = useHistory();
   const location = useLocation();
 
-  const [searchQuery, setSearchQuery] = useState(null);
+  const [searchQuery, setSearchQuery] = useState('');
   const [showCast, setShowCast] = useState(false);
   const [showReviews, setShowReviews] = useState(false);
 
