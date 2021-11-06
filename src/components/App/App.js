@@ -1,26 +1,26 @@
 import './App.css';
 import { Route, Switch } from 'react-router-dom';
 import { lazy, Suspense } from 'react';
-import AppBar from '../components/AppBar/AppBar';
-import Container from '../components/Container/Container';
+import AppBar from '../AppBar/AppBar';
+import Container from '../Container/Container';
 import Loader from 'react-loader-spinner';
 
 const HomePage = lazy(() =>
-  import('../pages/HomePage/HomePage' /* webpackChunkName: "home-page" */),
+  import('../../pages/HomePage/HomePage' /* webpackChunkName: "home-page" */),
 );
 const MoviePages = lazy(() =>
   import(
-    '../pages/MoviePage/MoviesPage' /* webpackChunkName: "movie-pages" */
+    '../../pages/MoviePage/MoviesPage' /* webpackChunkName: "movie-pages" */
   ),
 );
 const MovieDetailsPage = lazy(() =>
   import(
-    '../pages/MovieDetailsPage/MovieDetailsPage' /* webpackChunkName: "movie details-page" */
+    '../../pages/MovieDetailsPage/MovieDetailsPage' /* webpackChunkName: "movie details-page" */
   ),
 );
 const NoFoundPage = lazy(() =>
   import(
-    '../pages/NoFoundPage/NoFoundPage' /* webpackChunkName: "noFound-page" */
+    '../../pages/NoFoundPage/NoFoundPage' /* webpackChunkName: "noFound-page" */
   ),
 );
 
