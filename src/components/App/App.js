@@ -1,5 +1,5 @@
 import './App.css';
-import { Route, Switch } from 'react-router-dom';
+import { Redirect, Route, Switch } from 'react-router-dom';
 import { lazy, Suspense } from 'react';
 import AppBar from '../AppBar/AppBar';
 import Container from '../Container/Container';
@@ -39,6 +39,7 @@ export default function App() {
           <Route path="/movies/:movieId">
             <MovieDetailsPage />
           </Route>
+          <Redirect to="/" />
           <Route>
             <NoFoundPage />
           </Route>
