@@ -39,10 +39,10 @@ export default function App() {
           <Route path="/movies/:movieId">
             <MovieDetailsPage />
           </Route>
-          <Redirect to="/" />
-          <Route>
+          <Route path="/noFound">
             <NoFoundPage />
           </Route>
+          <Redirect to="/noFound" />
         </Switch>
       </Container>
     </Suspense>

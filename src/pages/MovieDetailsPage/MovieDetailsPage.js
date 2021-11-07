@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import MovieAPI from '../../services/serviceAPI';
+import { lazy, Suspense } from 'react';
 import {
   NavLink,
   Route,
@@ -10,9 +11,17 @@ import {
 } from 'react-router-dom';
 import AboutMovie from '../../components/AboutMovie/AboutMovie';
 import NotFound from '../../components/NotFound/NotFound';
-import Cast from '../../components/Cast/Cast';
-import Reviews from '../../components/Reviews/Reviews';
 import s from './MovieDetailsPage.module.css';
+import Loader from 'react-loader-spinner';
+
+const Cast = lazy(() =>
+  import('../../components/Cast/Cast' /* webpackChunkName: "cast-chunk" */),
+);
+const Reviews = lazy(() =>
+  import(
+    '../../components/Reviews/Reviews' /* webpackChunkName: "reviews-chunk" */
+  ),
+);
 
 const MovieDetailsPage = () => {
   const { movieId } = useParams();
@@ -87,12 +96,14 @@ const MovieDetailsPage = () => {
               </NavLink>
             </li>
           </ul>
-          <Route path={`${path}/cast`}>
-            {searchQuery && showCast && <Cast />}
-          </Route>
-          <Route path={`${path}/reviews`}>
-            {searchQuery && showReviews && <Reviews />}
-          </Route>
+          <Suspense fallback={<Loader />}>
+            <Route path={`${path}/cast`}>
+              {searchQuery && showCast && <Cast />}
+            </Route>
+            <Route path={`${path}/reviews`}>
+              {searchQuery && showReviews && <Reviews />}
+            </Route>
+          </Suspense>
         </>
       ) : (
         <NotFound />
